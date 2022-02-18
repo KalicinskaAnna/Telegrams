@@ -4,166 +4,124 @@
 *,
 *::before,
 *::after {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
 }
+
 html {
 	scroll-padding-top: 82px;
 }
-h2 {
-	text-align: center;
-}
+
 body {
 	position: relative;
-	background-color: #bebebeee;
 	font-family: 'Montserrat', sans-serif;
+	background-color: $bg-color;
 }
+
+h2 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
 .underline {
-	height: 4px;
-	width: 60px;
 	margin: 0 auto 40px;
+	width: 60px;
+	height: 4px;
 	background-color: $main-color;
 }
-nav {
-	z-index: 100;
-	transition: background-color 0.6s;
 
-	.nav-link {
-		text-transform: uppercase;
+.blue-text {
+	color: $main-color;
+}
+
+.shadow-bg {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav {
+	text-transform: uppercase;
+	transition: background-color 0.6s;
+	z-index: 1;
+
+	a,
+	i {
 		color: $white;
+	}
+
+	a:hover {
+		color: $main-color;
+	}
+
+	.fa-bars {
+		padding: 10px;
 	}
 
 	.navbar-brand {
-		text-transform: uppercase;
-		color: $white;
 		font-weight: bold;
 	}
-	.fa-bars {
-		padding: 10px;
-		color: $main-color;
-	}
+
 	.active {
 		color: $main-color;
 	}
 }
-.hero-img2 {
-	background-position: center;
-	background-image: url('../img/technology-g822bc81c5_640.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: local;
-	position: relative;
-	top: -100px;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	.container {
-		margin: 10px;
-		padding: 10px;
-	}
-}
+header {
+	color: $white;
 
-.hero-img {
-	background-position: center;
-	background-image: url('../img/playstation-g73ebff752_640.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	position: relative;
-	top: -100px;
-	height: 80vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	.fa-chevron-down {
+	h1 {
 		font-size: 30px;
-		position: absolute;
-		color: $white;
-		bottom: 150px;
+		text-transform: uppercase;
 	}
-}
-.hero-bg {
-	position: absolute;
-	background-color: rgba(0, 0, 0, 0.5);
-	height: 100%;
-	width: 100%;
-}
 
-.hero-text {
-	position: relative;
-	text-align: center;
-	color: white;
-	font-size: 40px;
-	padding: 20px 0;
-}
-.padding-top {
-	padding-top: 0;
-}
-.blue {
-	color: $main-color;
-}
-.shadow-bg {
-	background-color: rgba(0, 0, 0, 0.8);
-	height: 100%;
-}
+	p {
+		font-size: 14px;
+	}
 
-.carousel-caption {
-	position: absolute;
-	bottom: 60px;
-	z-index: 2;
-}
+	.hero-img {
+		position: relative;
+		height: 100vh;
+		background-image: url('../img/playstation-g73ebff752_640.jpg');
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+		z-index: 0;
+	}
 
-.box {
-	height: 800px;
+	.hero-shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		z-index: -10;
+	}
 
-	overflow: hidden;
-}
-.carousel-item .carousel-caption {
-	position: absolute;
-	background-color: rgba(0, 0, 0, 0.8);
-	left: 0;
-	right: 0;
+	.hero-text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 100%;
+		padding: 10px;
+		text-align: center;
+		z-index: 5;
+	}
 
-	margin: 20px 0;
-	padding: 5px 0 0;
-	z-index: 20;
+	.btn-outline-light {
+		text-transform: uppercase;
+	}
+
+	.fa-chevron-down {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 20px;
+		font-size: 30px;
+		color: $white;
+	}
 }
 
 .aboutus {
-	position: relative;
-	top: -100px;
-}
-i {
-	margin-top: 20px;
-	font-size: 30px;
-}
-.card-title {
-	text-transform: uppercase;
-}
-.aboutus-card-title {
-	font-size: 18px;
-	text-transform: uppercase;
-}
-
-.aboutus-card-text {
-	font-size: 14px;
-}
-
-.hover-aboutus:hover {
-	color: $main-color;
-}
-
-.portfolio {
-	position: relative;
-	top: -100px;
-}
-.white {
-	color: $white;
-	z-index: 2;
 	i {
 		margin-top: 20px;
 		font-size: 30px;
@@ -178,98 +136,233 @@ i {
 		font-size: 14px;
 	}
 
-	.hover-aboutus:hover {
+	.aboutus-hover {
+		// transition: color .3s;
+	}
+
+	.aboutus-hover:hover {
 		color: $main-color;
 	}
 }
-.slaider {
-	display: none;
-}
-.cartgrups {
-	margin: 10px;
-	padding: 10px;
-}
 
-.title {
-	font-size: 40px;
-	color: $main-color;
-}
-
-.boxes {
-	background-color: $white;
-	padding: 50px 5px;
-	margin: 25px;
-	border-radius: 25px;
-	box-shadow: 25px 34px 24px 7px rgba(66, 68, 90, 1);
-	transition: transform 1s;
-}
-.boxes:hover {
-	transform: scale(1.05);
-}
-hr {
-	border: 3px solid $main-color;
-}
-
-.card-groupe-margin {
-	margin: 25px;
-	padding: 5px;
-}
-
-.hero-img3 {
+.aboutus-hero {
+	position: relative;
+	background-image: url('../img/about-hero-small.jpg');
 	background-position: center;
-	background-image: url('../img/interior-g489a3c84c_1920.jpg');
 	background-size: cover;
-	background-repeat: no-repeat;
 	background-attachment: fixed;
-	position: relative;
-	height: 90vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-.card {
-	transition: transform 0.3s;
-	img {
-		height: 300px;
-		object-fit: cover;
-	}
-	i {
-		padding: 10px;
-	}
-}
-.card:hover {
-	transform: scale(0.96);
-}
-
-.small {
-	i {
-		color: $white;
-		font-size: 40px;
-		padding: 10px;
-		text-shadow: 0 0 5px #000;
-	}
-}
-.contact {
-	background-image: url('../img/a.jpg');
-	background-attachment: fixed;
-	background-size: cover;
-	background-position: bottom;
-	position: relative;
-	top: 0;
+	color: $light-gray;
 	z-index: 0;
-	.contact-shadow {
+
+	.aboutus-shadow {
 		position: absolute;
-		height: 100%;
+		top: 0;
 		width: 100%;
-		bottom: 0;
-		background-color: rgba(0, 0, 0, 0.5);
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
 		z-index: -5;
 	}
-	.container {
-		.contact-us {
-			z-index: 1000;
-			color: $white;
+
+	.aboutus-hero-item {
+		margin: 10px 0;
+
+		i {
+			font-size: 36px;
+		}
+
+		.aboutus-hero-title {
+			font-size: 24px;
+		}
+	}
+}
+
+.portfolio {
+	.carousel-item {
+		position: relative;
+		height: 600px;
+	}
+
+	.carousel-caption {
+		position: absolute;
+		left: 0;
+		right: 0;
+		padding: 40px 0;
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.carousel-indicators {
+		padding-bottom: 20px;
+	}
+}
+
+.prices {
+	.price-box {
+		margin: 20px 10px;
+		padding: 30px;
+		background-color: $white;
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+		transition: transform 0.3s;
+
+		h3 {
+			color: $main-color;
+			text-transform: uppercase;
+		}
+
+		span {
+			font-weight: bold;
+		}
+
+		i {
+			padding: 0 5px;
+			font-size: 24px;
+		}
+
+		button {
+			padding: 10px 20px;
+			text-transform: uppercase;
+		}
+
+		.price-tag {
+			font-size: 30px;
+			font-weight: bold;
+		}
+	}
+
+	.price-box:hover {
+		transform: scale(1.05);
+	}
+
+	.price-info {
+		margin-top: 30px;
+
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+.team {
+	position: relative;
+	background-image: url('../img/team-bg.jpg');
+	background-size: cover;
+	background-attachment: fixed;
+	z-index: 0;
+
+	h2 {
+		color: $light-gray;
+	}
+
+	.team-shadow {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.8);
+		z-index: -5;
+	}
+
+	.card {
+		transition: transform 0.3s;
+
+		img {
+			height: 300px;
+			object-fit: cover;
+		}
+
+		i {
+			padding: 10px;
+		}
+	}
+
+	.card:hover {
+		transform: scale(0.96);
+	}
+
+	.card-title {
+		margin-bottom: 20px;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.card-body {
+		height: 160px;
+	}
+}
+
+.achievements {
+	i {
+		padding: 10px;
+		font-size: 48px;
+		color: $white;
+		text-shadow: 0 0 5px #000;
+	}
+
+	.achievements-list {
+		padding: 20px 0;
+	}
+
+	.achievement-number {
+		font-size: 22px;
+	}
+
+	.achievement-text {
+		font-size: 13px;
+		text-transform: uppercase;
+	}
+}
+
+.contact {
+	position: relative;
+	background-image: url('../img/city.jpg');
+	background-position: bottom;
+	background-attachment: fixed;
+	background-size: cover;
+	z-index: 0;
+
+	h2 {
+		color: $light-gray;
+		font-weight: bold;
+	}
+
+	.underline {
+		background-color: $light-gray;
+	}
+
+	.contact-shadow {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 9, 27, 0.85);
+		z-index: -5;
+	}
+
+	.contact-us {
+		display: flex;
+		align-items: center;
+		color: $white;
+
+		.contact-item {
+			margin: 30px 0;
+
+			h3 {
+				margin-bottom: 15px;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+
+			.social-media {
+				font-size: 26px;
+
+				a {
+					padding: 10px;
+					color: $white;
+				}
+
+				a:hover {
+					color: $light-gray;
+				}
+			}
 		}
 	}
 }
@@ -297,21 +390,27 @@ hr {
 		}
 	}
 }
-@media (min-width: 1200px) {
-	.hero-img {
-		background-image: url('../img/playstation-g8a0b92abb_1920.jpg');
+
+@media (min-width: 992px) {
+	nav {
+		height: 82px;
+	}
+
+	.aboutus-hero {
+		background-image: url('../img/');
+	}
+
+	.prices {
+		.price-info {
+			font-size: 18px;
+		}
 	}
 }
 
-@media (min-width: 992px) {
-	html {
-		scroll-padding-top: 82px;
-	}
-
-	.cartgrups {
-		display: none;
-	}
-	.slaider {
-		display: block;
+@media (min-width: 1200px) {
+	header {
+		.hero-img {
+			background-image: url('../img/playstation-g8a0b92abb_1920.jpg');
+		}
 	}
 }
